@@ -10,6 +10,12 @@ workflows:
       vars:
         PACKAGE_NAME: "com.alrcmedia.alrctv"
     scripts:
+      - name: 🧠 Augmenter la mémoire Java
+        script: echo "org.gradle.jvmargs=-Xmx4096m" >> android/gradle.properties
+      
+      - name: 🧼 Nettoyage
+        script: flutter clean
+
       - name: 📦 Install dependencies
         script: |
           flutter pub get
